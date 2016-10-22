@@ -1,0 +1,30 @@
+{
+  "name": "stripe-test-cards",
+  "version": "1.0.0",
+  "description": "Stripe test card data",
+  "main": "index.js",
+  "scripts": {
+    "unit-test": "mocha ./test --recursive",
+    "watch-unit-test": "mocha ./test --watch --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoenixbox/stripe-test-cards.git"
+  },
+  "keywords": [
+    "stripe",
+    "cards",
+    "test",
+    "data"
+  ],
+  "author": "Shane Rogers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phoenixbox/stripe-test-cards/issues"
+  },
+  "homepage": "https://github.com/phoenixbox/stripe-test-cards#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
