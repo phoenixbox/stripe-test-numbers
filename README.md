@@ -1,3 +1,6 @@
+![stripe-test-numbers](/../screenshots/public/img/stripe_test_numbers.jpg?raw=true "stripe-test-numbers")
+stripe-test-numbers
+---
 # stripe-test-numbers
 
 * All the Stripe testing numbers in one handy module.
@@ -13,6 +16,8 @@ STC.charges.error.card_declined
 
 * Example in app usage - (JS web)
 ```
+// 1. Token generation on the client
+Stripe.setPublishableKey(__STRIPE_PUBLISHABLE_KEY__)
 import STC from 'stripe-test-cards';
 
 const ccParams = {
@@ -22,12 +27,12 @@ const ccParams = {
   number: STC.charges.error.card_declined
 }
 
-// 1. Token generation on the client
 Stripe.card.createToken(ccParams, (status, response) => {
   // Make request to server with response token and user information in payload
 })
 
 // 2. Server side request
+var Stripe = require('stripe')(config.STRIPE_SECRET_KEY);
 const receivedPayload = {
   email: payload.email,
   source: payload.token
