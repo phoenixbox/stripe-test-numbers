@@ -1,5 +1,5 @@
 ![stripe-test-numbers](/../screenshots/public/img/stripe_test_numbers.jpg?raw=true "stripe-test-numbers")
-stripe-test-numbers
+[![wercker status](https://app.wercker.com/status/00cbb52e01ec3663915018964b5cf054/s/master "wercker status")](https://app.wercker.com/project/byKey/00cbb52e01ec3663915018964b5cf054)
 ---
 # stripe-test-numbers
 
@@ -9,22 +9,22 @@ stripe-test-numbers
 * Example
 ```
 // Successful Charge
-STC.charges.success.direct
+STN.charges.success.direct
 // Declined Charge
-STC.charges.error.card_declined
+STN.charges.error.card_declined
 ```
 
 * Example in app usage - (JS web)
 ```
 // 1. Token generation on the client
 Stripe.setPublishableKey(__STRIPE_PUBLISHABLE_KEY__)
-import STC from 'stripe-test-cards';
+import STN from 'stripe-test-numbers';
 
 const ccParams = {
   cvc: '123',
   exp_month: '01',
   exp_year: '20',
-  number: STC.charges.error.card_declined
+  number: STN.charges.error.card_declined
 }
 
 Stripe.card.createToken(ccParams, (status, response) => {
@@ -61,18 +61,18 @@ Stripe.customers.create(receivedPayload, function(err, customer) {
 	* Debit
 	* Prepaid
 ```
-STC.cards.domestic.visa.A
-STC.cards.domestic.visa.B
-STC.cards.domestic.visa.debit
-STC.cards.domestic.mastercard.A
-STC.cards.domestic.mastercard.debit
-STC.cards.domestic.mastercard.prepaid
-STC.cards.domestic.amex.A
-STC.cards.domestic.amex.B
-STC.cards.domestic.discover.A
-STC.cards.domestic.discover.B
-STC.cards.domestic.jcb.A
-STC.cards.domestic.jcb.B
+STN.cards.domestic.visa.A
+STN.cards.domestic.visa.B
+STN.cards.domestic.visa.debit
+STN.cards.domestic.mastercard.A
+STN.cards.domestic.mastercard.debit
+STN.cards.domestic.mastercard.prepaid
+STN.cards.domestic.amex.A
+STN.cards.domestic.amex.B
+STN.cards.domestic.discover.A
+STN.cards.domestic.discover.B
+STN.cards.domestic.jcb.A
+STN.cards.domestic.jcb.B
 ```
 
 ### International
@@ -84,60 +84,60 @@ STC.cards.domestic.jcb.B
 ```
 // -- Americas --
 // Brazil
-STC.cards.intl.BR.visa.A
+STN.cards.intl.BR.visa.A
 // Canada
-STC.cards.intl.CA.visa.A
+STN.cards.intl.CA.visa.A
 // Mexico
-STC.cards.intl.MX.visa.A
+STN.cards.intl.MX.visa.A
 
 // -- Europe, Middle East & Africa --
 // Austria
-STC.cards.intl.AT.visa.A
+STN.cards.intl.AT.visa.A
 // Belgium
-STC.cards.intl.BE.visa.A
+STN.cards.intl.BE.visa.A
 // Denmark
-STC.cards.intl.DK.visa.A
+STN.cards.intl.DK.visa.A
 // Finland
-STC.cards.intl.FI.visa.A
+STN.cards.intl.FI.visa.A
 // France
-STC.cards.intl.FR.visa.A
+STN.cards.intl.FR.visa.A
 // Ireland
-STC.cards.intl.IE.visa.A
+STN.cards.intl.IE.visa.A
 // Italy
-STC.cards.intl.IT.visa.A
+STN.cards.intl.IT.visa.A
 // Luxembourg
-STC.cards.intl.LU.visa.A
+STN.cards.intl.LU.visa.A
 // Netherlands
-STC.cards.intl.NL.visa.A
+STN.cards.intl.NL.visa.A
 // Normway
-STC.cards.intl.NO.visa.A
+STN.cards.intl.NO.visa.A
 // Portugal
-STC.cards.intl.PT.visa.A
+STN.cards.intl.PT.visa.A
 // Russia
-STC.cards.intl.RU.visa.A
+STN.cards.intl.RU.visa.A
 // Spain
-STC.cards.intl.ES.visa.A
+STN.cards.intl.ES.visa.A
 // Sweden
-STC.cards.intl.SE.visa.A
+STN.cards.intl.SE.visa.A
 // Switzerland
-STC.cards.intl.CH.visa.A
+STN.cards.intl.CH.visa.A
 // United Kingdom
-STC.cards.intl.GB.visa.A
-STC.cards.intl.GB.visa.debit
+STN.cards.intl.GB.visa.A
+STN.cards.intl.GB.visa.debit
 
 // -- Asia - Pacific --
 // Australia
-STC.cards.intl.AU.visa.A
+STN.cards.intl.AU.visa.A
 // China
-STC.cards.intl.CN.visa.A
+STN.cards.intl.CN.visa.A
 // Hong Kong
-STC.cards.intl.HK.visa.A
+STN.cards.intl.HK.visa.A
 // Japan
-STC.cards.intl.JP.visa.A
+STN.cards.intl.JP.visa.A
 // New Zealand
-STC.cards.intl.NZ.visa.A
+STN.cards.intl.NZ.visa.A
 // Singapore
-STC.cards.intl.SG.visa.A
+STN.cards.intl.SG.visa.A
 ```
 
 ## Charges Responses & Errors
@@ -161,15 +161,15 @@ STC.cards.intl.SG.visa.A
 * `risk_level_elevated`
 	* 	Charge succeeds with a risk_level of elevated and placed into review.
 ```
-STC.charges.success.direct
-STC.charges.success.domestic_pricing
-STC.charges.success.address_line_1_zip_fail
-STC.charges.success.address_line_1_fail
-STC.charges.success.address_zip_fail
-STC.charges.success.address_line_1_zip_unavailable
-STC.charges.success.cvc_check_fail
-STC.charges.success.attach_ok_charge_fail
-STC.charges.success.risk_level_elevated
+STN.charges.success.direct
+STN.charges.success.domestic_pricing
+STN.charges.success.address_line_1_zip_fail
+STN.charges.success.address_line_1_fail
+STN.charges.success.address_zip_fail
+STN.charges.success.address_line_1_zip_unavailable
+STN.charges.success.cvc_check_fail
+STN.charges.success.attach_ok_charge_fail
+STN.charges.success.risk_level_elevated
 ```
 ### Error
 * `card_declined`
@@ -185,36 +185,36 @@ STC.charges.success.risk_level_elevated
 * `incorrect_number`
 	* Charge is declined with an incorrect_number code as the card number fails the Luhn check.
 ```
-STC.charges.error.card_declined
-STC.charges.error.card_declined_fraudulent
-STC.charges.error.incorrect_cvc
-STC.charges.error.expired_card
-STC.charges.error.processing_error
-STC.charges.error.incorrect_number
+STN.charges.error.card_declined
+STN.charges.error.card_declined_fraudulent
+STN.charges.error.incorrect_cvc
+STN.charges.error.expired_card
+STN.charges.error.processing_error
+STN.charges.error.incorrect_number
 ```
 
 ### Disputes
 * Number for simulating a disputed transaction.
 ```
-STC.disputes
+STN.disputes
 ```
 
 ## Managed Accounts
 ### Routing
 ```
-STC.managedAccounts.routing.AU
-STC.managedAccounts.routing.CA
-STC.managedAccounts.routing.GB
-STC.managedAccounts.routing.JP
-STC.managedAccounts.routing.SG
-STC.managedAccounts.routing.HK
-STC.managedAccounts.routing.US
+STN.managedAccounts.routing.AU
+STN.managedAccounts.routing.CA
+STN.managedAccounts.routing.GB
+STN.managedAccounts.routing.JP
+STN.managedAccounts.routing.SG
+STN.managedAccounts.routing.HK
+STN.managedAccounts.routing.US
 ```
 
 ### Account
 ```
 // Format Example
-STC.managedAccounts.account[COUNTRY][RESPONSE_TYPE][ERROR_CODE]
+STN.managedAccounts.account[COUNTRY][RESPONSE_TYPE][ERROR_CODE]
 ```
 * Account numbers by:
 	* Supported countries
@@ -229,116 +229,119 @@ STC.managedAccounts.account[COUNTRY][RESPONSE_TYPE][ERROR_CODE]
 #### United States & Canada
 ##### Success
 ```
-STC.managedAccounts.account.USCA.success
+STN.managedAccounts.account.USCA.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.USCA.error.no_account
-STC.managedAccounts.account.USCA.error.account_closed
-STC.managedAccounts.account.USCA.error.insufficient_funds
-STC.managedAccounts.account.USCA.error.debit_not_authorized
-STC.managedAccounts.account.USCA.error.invalid_currency
+STN.managedAccounts.account.USCA.error.no_account
+STN.managedAccounts.account.USCA.error.account_closed
+STN.managedAccounts.account.USCA.error.insufficient_funds
+STN.managedAccounts.account.USCA.error.debit_not_authorized
+STN.managedAccounts.account.USCA.error.invalid_currency
 ```
 
 #### Australia
 ##### Success
 ```
-STC.managedAccounts.account.AU.success
+STN.managedAccounts.account.AU.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.AU.error.no_account
-STC.managedAccounts.account.AU.error.account_closed
-STC.managedAccounts.account.AU.error.insufficient_funds
-STC.managedAccounts.account.AU.error.debit_not_authorized
-STC.managedAccounts.account.AU.error.invalid_currency
+STN.managedAccounts.account.AU.error.no_account
+STN.managedAccounts.account.AU.error.account_closed
+STN.managedAccounts.account.AU.error.insufficient_funds
+STN.managedAccounts.account.AU.error.debit_not_authorized
+STN.managedAccounts.account.AU.error.invalid_currency
 ```
 
 #### Japan
 ##### Success
 ```
-STC.managedAccounts.account.JP.success
+STN.managedAccounts.account.JP.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.JP.error.no_account
-STC.managedAccounts.account.JP.error.account_closed
-STC.managedAccounts.account.JP.error.insufficient_funds
-STC.managedAccounts.account.JP.error.debit_not_authorized
-STC.managedAccounts.account.JP.error.invalid_currency
+STN.managedAccounts.account.JP.error.no_account
+STN.managedAccounts.account.JP.error.account_closed
+STN.managedAccounts.account.JP.error.insufficient_funds
+STN.managedAccounts.account.JP.error.debit_not_authorized
+STN.managedAccounts.account.JP.error.invalid_currency
 ```
 
 #### United Kingdom
 ##### Success
 ```
-STC.managedAccounts.account.GB.success
+STN.managedAccounts.account.GB.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.GB.error.no_account
-STC.managedAccounts.account.GB.error.account_closed
-STC.managedAccounts.account.GB.error.insufficient_funds
-STC.managedAccounts.account.GB.error.debit_not_authorized
-STC.managedAccounts.account.GB.error.invalid_currency
+STN.managedAccounts.account.GB.error.no_account
+STN.managedAccounts.account.GB.error.account_closed
+STN.managedAccounts.account.GB.error.insufficient_funds
+STN.managedAccounts.account.GB.error.debit_not_authorized
+STN.managedAccounts.account.GB.error.invalid_currency
 ```
 
 #### IBAN (Europe)
 ##### Success
 ```
-STC.managedAccounts.account.IBAN.success
+STN.managedAccounts.account.IBAN.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.IBAN.error.no_account
-STC.managedAccounts.account.IBAN.error.account_closed
-STC.managedAccounts.account.IBAN.error.insufficient_funds
-STC.managedAccounts.account.IBAN.error.debit_not_authorized
-STC.managedAccounts.account.IBAN.error.invalid_currency
+STN.managedAccounts.account.IBAN.error.no_account
+STN.managedAccounts.account.IBAN.error.account_closed
+STN.managedAccounts.account.IBAN.error.insufficient_funds
+STN.managedAccounts.account.IBAN.error.debit_not_authorized
+STN.managedAccounts.account.IBAN.error.invalid_currency
 ```
 
 #### Singapore
 ##### Success
 ```
-STC.managedAccounts.account.SG.success
+STN.managedAccounts.account.SG.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.SG.error.no_account
-STC.managedAccounts.account.SG.error.account_closed
-STC.managedAccounts.account.SG.error.insufficient_funds
-STC.managedAccounts.account.SG.error.debit_not_authorized
-STC.managedAccounts.account.SG.error.invalid_currency
+STN.managedAccounts.account.SG.error.no_account
+STN.managedAccounts.account.SG.error.account_closed
+STN.managedAccounts.account.SG.error.insufficient_funds
+STN.managedAccounts.account.SG.error.debit_not_authorized
+STN.managedAccounts.account.SG.error.invalid_currency
 ```
 
 #### Hong Kong
 ##### Success
 ```
-STC.managedAccounts.account.HK.success
+STN.managedAccounts.account.HK.success
 ```
 ##### Error
 ```
-STC.managedAccounts.account.HK.error.no_account
-STC.managedAccounts.account.HK.error.account_closed
-STC.managedAccounts.account.HK.error.insufficient_funds
-STC.managedAccounts.account.HK.error.debit_not_authorized
-STC.managedAccounts.account.HK.error.invalid_currency
+STN.managedAccounts.account.HK.error.no_account
+STN.managedAccounts.account.HK.error.account_closed
+STN.managedAccounts.account.HK.error.insufficient_funds
+STN.managedAccounts.account.HK.error.debit_not_authorized
+STN.managedAccounts.account.HK.error.invalid_currency
 ```
 
 ### Debit Cards
 * Debit card number by response status and card issuer.
 #### Success
 ```
-STC.managedAccounts.debit.success.mastercard
-STC.managedAccounts.debit.success.visa
+STN.managedAccounts.debit.success.mastercard
+STN.managedAccounts.debit.success.visa
 ```
 #### Error
 ```
-STC.managedAccounts.debit.error.visa
+STN.managedAccounts.debit.error.visa
 ```
 
 ### Tax Ids
 ```
-STC.managedAccounts.taxIds.success.A
-STC.managedAccounts.taxIds.success.nonProfit
-STC.managedAccounts.taxIds.error
+STN.managedAccounts.taxIds.success.A
+STN.managedAccounts.taxIds.success.nonProfit
+STN.managedAccounts.taxIds.error
 ```
+
+---
+Card icon from [ProjectNoun](https://thenounproject.com/term/credit-card/594163/)
