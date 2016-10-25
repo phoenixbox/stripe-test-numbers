@@ -47,7 +47,7 @@ Stripe.customers.create(receivedPayload, function(err, customer) {
 })
 ```
 
-# API Reference
+# [API Reference](https://stripe.com/docs/testing)
 ## Card Numbers
 ### Domestic
 * Card Issuers
